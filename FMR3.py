@@ -1,0 +1,26 @@
+from functools import reduce
+
+def CheckEven(No):
+    return (No % 2 == 0)
+
+def Incerment(No):
+    return No+1
+
+def Add(A,B):
+    return A+B
+
+def main():
+    Data = [11,10,15,20,27,22,30]
+    print("Actual Data is :",Data)
+
+    FData = list(filter(CheckEven, Data))
+    print("Data after filter is : ",FData)
+
+    MData = list(map(Incerment, FData))
+    print("Data after mapping is :",MData)
+
+    RData = reduce(Add, MData)
+    print("Data after reduce is :",RData)
+
+if __name__ == "__main__":
+    main()
